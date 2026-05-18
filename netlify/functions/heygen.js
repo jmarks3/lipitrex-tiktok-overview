@@ -25,7 +25,7 @@ exports.handler = async function(event) {
 
   try {
     const { script, personaId, genomeId } = JSON.parse(event.body);
-    const avatarId = AVATAR_MAP[personaId];
+    const avatarId = AVATAR_MAP[Number(personaId)];
 
     if (!avatarId) {
       return { 
